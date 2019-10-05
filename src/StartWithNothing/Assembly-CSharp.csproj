@@ -63,14 +63,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Actions\ActionRunner.cs" />
+    <Compile Include="Assets\Scripts\Actions\ActivateCreatureAction.cs" />
     <Compile Include="Assets\Scripts\Actions\BaseAction.cs" />
+    <Compile Include="Assets\Scripts\Actions\ChangeTextColourAction.cs" />
+    <Compile Include="Assets\Scripts\Actions\EnableGameObjectAction.cs" />
     <Compile Include="Assets\Scripts\Actions\FadeCanvas.cs" />
     <Compile Include="Assets\Scripts\Actions\FadeUpText.cs" />
     <Compile Include="Assets\Scripts\Actions\IAction.cs" />
     <Compile Include="Assets\Scripts\Actions\LerpObjectToAction.cs" />
     <Compile Include="Assets\Scripts\Actions\ToggleActivateAction.cs" />
     <Compile Include="Assets\Scripts\Actions\WaitAction.cs" />
+    <Compile Include="Assets\Scripts\Creature\CreatureLocomotion.cs" />
     <Compile Include="Assets\Scripts\Narration\InTheBeginning.cs" />
+    <Compile Include="Assets\Scripts\Narration\NarrationBehaviour.cs" />
     <Compile Include="Assets\Scripts\Narration\SuddenlyACreature.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
