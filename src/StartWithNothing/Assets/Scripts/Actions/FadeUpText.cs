@@ -33,8 +33,8 @@ public class FadeUpText : BaseAction
         _fadeIn = fadeInTime;
         _holdTime = -1;
 
-        _from = 0f;
-        _to = 1f;
+        _from = from;
+        _to = to;
 
         _textComponent = target.GetComponent<TextMeshProUGUI>();
         _canvasGroup = target.GetComponent<CanvasGroup>();
