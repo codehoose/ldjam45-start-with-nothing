@@ -4,6 +4,7 @@ public class FallingFromTheSky : NarrationBehaviour
 {
     public GameObject _captionText;
     public GameObject _strangeObjectSpawner;
+    public GameObject _nextStoryPoint;
 
     void Awake()
     {
@@ -28,5 +29,6 @@ public class FallingFromTheSky : NarrationBehaviour
             spawner.EnableDrop(false);
         }));
         Runner.Add(new FadeUpText(_captionText, "\r\nThe storm subsides and peace is restored.", 0.5f, 1, 1));
+        Runner.Add(new ToggleActivateAction(_nextStoryPoint, true));
     }
 }

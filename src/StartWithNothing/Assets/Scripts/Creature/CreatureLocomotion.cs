@@ -6,8 +6,12 @@ public class CreatureLocomotion : MonoBehaviour
     private Rigidbody _rb;
     private bool _enabled;
     private float _magnitude = 20f;
+    private int _itemHit = 0;
+    private bool _jumpEnabled;
+    private float _jumpCooldown = 0f;
 
     public event EventHandler Moved;
+    public event EventHandler EnlightenmentAchieved;
 
     void Awake()
     {
@@ -25,7 +29,41 @@ public class CreatureLocomotion : MonoBehaviour
             {
                 Moved?.Invoke(this, EventArgs.Empty);
             }
+
+            if (_jumpCooldown > 0)
+            {
+                _jumpCooldown -= Time.deltaTime;
+                if (_jumpCooldown < 0)
+                {
+                    _jumpCooldown = 0;
+                }
+            }
+
+            if (_jumpEnabled && _jumpCooldown == 0 && (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2")))
+            {
+                _jumpCooldown = 1;
+                _rb.AddForce(Vector3.up * _magnitude / 2, ForceMode.VelocityChange);
+            }
         }
+    }
+
+    internal void ItemPickup()
+    {
+        if (_itemHit >= 10)
+        {
+            return;
+        }
+
+        _itemHit++;
+        if (_itemHit >= 10)
+        {
+            EnlightenmentAchieved?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    internal void EnableJump(bool enable)
+    {
+        _jumpEnabled = enable;
     }
 
     public void EnableMovement(bool enable)
