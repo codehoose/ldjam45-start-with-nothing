@@ -8,11 +8,16 @@ public class InTheBeginning : NarrationBehaviour
 
     public GameObject _nextStoryPoint;
 
+    public AudioClip _thunderClap;
+
+    public AudioSource _audioSource;
+
     void Awake()
     {
         Runner.Add(new WaitAction(2));
         Runner.Add(new FadeUpText(_captionText, "In the beginning there was nothing.\r\nJust darkness everywhere...", 1, 5, 1));
         Runner.Add(new FadeUpText(_captionText, "All it would take is a flash of inspiration.\r\nA spark of light!", 1, 5, 1));
+        Runner.Add(new PlaySoundAction(_thunderClap, _audioSource));
         Runner.Add(new FadeCanvas(_canvas, 0.1f, 0.8f, 0.1f));
         Runner.Add(new FadeCanvas(_canvas, 0.1f, 0.5f, 0.1f));
         Runner.Add(new FadeCanvas(_canvas, 0.1f, 0.8f, 0.1f));

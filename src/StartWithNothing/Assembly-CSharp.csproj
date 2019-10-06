@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Actions\IAction.cs" />
     <Compile Include="Assets\Scripts\Actions\LerpObjectToAction.cs" />
     <Compile Include="Assets\Scripts\Actions\PerformAction.cs" />
+    <Compile Include="Assets\Scripts\Actions\PlaySoundAction.cs" />
     <Compile Include="Assets\Scripts\Actions\ToggleActivateAction.cs" />
     <Compile Include="Assets\Scripts\Actions\WaitAction.cs" />
     <Compile Include="Assets\Scripts\Creature\CreatureLocomotion.cs" />
@@ -82,6 +83,10 @@
     <Compile Include="Assets\Scripts\Narration\InTheBeginning.cs" />
     <Compile Include="Assets\Scripts\Narration\NarrationBehaviour.cs" />
     <Compile Include="Assets\Scripts\Narration\SuddenlyACreature.cs" />
+    <Compile Include="Assets\Scripts\UI\SetVolumes.cs" />
+    <Compile Include="Assets\Scripts\UI\SliderVolume.cs" />
+    <Compile Include="Assets\Scripts\UI\StartScene.cs" />
+    <Compile Include="Assets\Scripts\UI\VolumeNames.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
