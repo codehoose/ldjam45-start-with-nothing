@@ -5,6 +5,7 @@ public class Elightenment : NarrationBehaviour // Spelling mistake :(
     public GameObject _captionText;
     public CreatureLocomotion _locomotion;
     public GameObject _spawner;
+    public GameObject _nextStoryPoint;
 
     void Awake()
     {
@@ -26,5 +27,6 @@ public class Elightenment : NarrationBehaviour // Spelling mistake :(
         var spawner = _spawner.GetComponent<StrangeObjectSpawner>();
         spawner.EnableDrop(false);
         _locomotion.EnlightenmentAchieved -= Locomotion_EnlightenmentAchieved;
+        _nextStoryPoint.SetActive(true);
     }
 }

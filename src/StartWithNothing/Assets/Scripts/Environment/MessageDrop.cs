@@ -10,13 +10,15 @@ public class MessageDrop : MonoBehaviour
     {
         if (c.gameObject.tag == "Player" && c.transform.position.y > 0)
         {
-            Instantiate(_playerHit);
+            Instantiate(_playerHit, transform.position, Quaternion.identity);
             var locomotion = c.gameObject.GetComponent<CreatureLocomotion>();
             locomotion.ItemPickup();
         }
         else
         {
-            Instantiate(_groundHit);
+            Instantiate(_groundHit, transform.position, Quaternion.identity);
         }
+
+        Destroy(this.gameObject);
     }
 }

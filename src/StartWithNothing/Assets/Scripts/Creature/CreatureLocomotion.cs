@@ -22,12 +22,15 @@ public class CreatureLocomotion : MonoBehaviour
     {
         if (_enabled)
         {
-            var horiz = Input.GetAxis("Horizontal");
-            var force = Vector3.right * horiz * _magnitude * Time.deltaTime;
-            _rb.AddForce(force, ForceMode.VelocityChange);
-            if (horiz > 0.1)
+            if (_jumpCooldown == 0)
             {
-                Moved?.Invoke(this, EventArgs.Empty);
+                var horiz = Input.GetAxis("Horizontal");
+                var force = Vector3.right * horiz * _magnitude * Time.deltaTime;
+                _rb.AddForce(force, ForceMode.VelocityChange);
+                if (horiz > 0.1)
+                {
+                    Moved?.Invoke(this, EventArgs.Empty);
+                }
             }
 
             if (_jumpCooldown > 0)
@@ -42,7 +45,7 @@ public class CreatureLocomotion : MonoBehaviour
             if (_jumpEnabled && _jumpCooldown == 0 && (Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2")))
             {
                 _jumpCooldown = 1;
-                _rb.AddForce(Vector3.up * _magnitude / 2, ForceMode.VelocityChange);
+                _rb.AddForce(Vector3.up * _magnitude / 2, ForceMode.Impulse);
             }
         }
     }
